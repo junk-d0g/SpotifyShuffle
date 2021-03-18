@@ -2,12 +2,14 @@ import spotipy
 import json
 import random
 import os
+import time
 import sys
 from spotipy.oauth2 import SpotifyOAuth
 import spotipy.util as util
 from json.decoder import JSONDecodeError
 import json
 
+random.seed(time.time())
 username = sys.argv[1]
 scope = 'user-read-private user-read-playback-state user-modify-playback-state user-library-read'
 
@@ -47,12 +49,14 @@ while True:
         off+=amount
     except Exception:
         break
-
+inp = 0
 print("finished indexing")
-print("adding random indexes to queue")
-for i in range(len(songs)):
+inp = int(input("How many songs would you like to add?\nSpotify Desktop does not handle queues over 1000 very well\n"))
+
+for i in range(inp):
     rand = random.randint(0,len(songs)-1)
     spotifyObject.add_to_queue(songs[rand])
-    del songs[rand]
+    print(str(inp-i)+" songs remaining")
+print("Finished!")
 
 #['items'][0]['track']['track_number']
