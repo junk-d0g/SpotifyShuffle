@@ -8,8 +8,8 @@ Will timeout sometimes
 
 SETUP:
 
-python ./actual-shuffle.py "Your spotify username goes here"
+Download actual-shuffle.exe
 
-this will launch a web browser to authorize the application. press yes and copy+paste the url afterwards into the command line
+Enter your spotify username, then copy paste the url of the google page that pops up after you login
 
-the script should start indexing.
+Wait for it to index your library, then enter the size of the queue you want
