@@ -10,7 +10,7 @@ from json.decoder import JSONDecodeError
 import json
 
 random.seed(time.time())
-username = sys.argv[1]
+username = str(input("Spotify Username: "))
 scope = 'user-read-private user-read-playback-state user-modify-playback-state user-library-read'
 
 os.environ["SPOTIPY_CLIENT_SECRET"] = "bc1a1e0ca87d45d0b8cd0b4faca09217"
